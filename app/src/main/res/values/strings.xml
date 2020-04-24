@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">NEWS</string>
+    <string name="news_api_key" translatable="false">6deb351212ea4eee86756168e6c0bef9</string>
+    <string name="news_api_host" translatable="false">https://newsapi.org/</string>
+    <string name="no_internet_connection_message">No Internet Connection</string>
+    <string name="cant_get_information">Can\'t get the information, please try again.</string>
+    <string name="bussiness_label">business</string>
+    <string name="entertaiment_label">entertaiment</string>
+    <string name="general_label">general</string>
+    <string name="health_label">health</string>
+    <string name="science_label">science</string>
+    <string name="sports_label">sports</string>
+    <string name="technology_label">technology</string>
+    <string name="has_reached_bottom_list">You\'ve reached bottom list</string>
+    <string name="data_not_found">Data not found</string>
+    <string name="wait_a_moment">Looking for data, please wait a moment …</string>
+    <string name="top_headline_tab_title" translatable="false">Top Headline</string>
+    <string name="by_category_tab_title" translatable="false">by Category</string>
+    <string name="search_label">Search</string>
+
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NEWS</string>
+
+    <string name="no_internet_connection_message">Tidak Ada Koneksi Internet</string>
+    <string name="cant_get_information">Gagal mendapatkan informasi, silakan coba lagi.</string>
+    <string name="bussiness_label">bisnis</string>
+    <string name="entertaiment_label">hiburan</string>
+    <string name="general_label">umum</string>
+    <string name="health_label">kesehatan</string>
+    <string name="science_label">pengetahuan</string>
+    <string name="sports_label">olahraga</string>
+    <string name="technology_label">teknologi</string>
+    <string name="has_reached_bottom_list">Anda telah mencapai batas akhir</string>
+    <string name="data_not_found">Data tidak ditemukan</string>
+    <string name="wait_a_moment">Sedang mencari data, harap tunggu sebentar…</string>
+    <string name="search_label">Pencarian</string>
+
+</resources>

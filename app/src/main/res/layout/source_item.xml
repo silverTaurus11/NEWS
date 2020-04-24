@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_news_item"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:layout_margin="10dp"
+    android:elevation="5dp"
+    android:id="@+id/news_container">
+    <TextView
+        android:id="@+id/news_source"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGray"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginBottom="4dp"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:text="Sumber"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/palegray"/>
+
+    <TextView
+        android:id="@+id/news_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detail asja dfdfasfaffndsjfknsdfdfdfasfaffndsjfknsdfdfdfasfaffndsjfknsdfdfdfasfaffndsjfknsdfdfdfasfaffndsjfknsdfdfdfasfaffndsjfknsdfdfdfasfaffndsjfknsdfdfdfasfaffndsjfknsdfdfdfasfaffndsjfknsdfdfdfasfaffndsjfknsdf"
+        android:maxLines="3"
+        android:minLines="3"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:ellipsize="end"
+        android:textColor="@color/darkGray"
+        android:textSize="16dp"/>
+
+
+    <TextView
+        android:id="@+id/news_source_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkGray"
+        android:layout_marginTop="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="right"
+        android:textSize="10dp"
+        android:text="Sumber"/>
+</LinearLayout>

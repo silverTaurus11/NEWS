@@ -13,7 +13,8 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.news.R
-import kotlinx.android.synthetic.main.activity_web_detail.*
+import kotlinx.android.synthetic.main.constraint_activity_web_detail.*
+import kotlinx.android.synthetic.main.constraint_error_web_detail.*
 
 
 class WebViewActivity: AppCompatActivity() {
@@ -28,7 +29,7 @@ class WebViewActivity: AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_web_detail)
+        setContentView(R.layout.constraint_activity_web_detail)
         initWebView()
         setWebClient()
         initListener()

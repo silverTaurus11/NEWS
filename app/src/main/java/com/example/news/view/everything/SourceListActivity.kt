@@ -15,7 +15,7 @@ import com.example.news.model.SourceItem
 import com.example.news.presenter.sources.NewSourcesPresenterFactory
 import com.example.news.view.WebViewActivity
 import com.example.news.view.topheadline.NewsRecyclerAdapter
-import kotlinx.android.synthetic.main.activity_source_list.*
+import kotlinx.android.synthetic.main.category_activity_source_list.*
 
 class SourceListActivity: AppCompatActivity(), NewsSourcesView {
     companion object{
@@ -44,7 +44,7 @@ class SourceListActivity: AppCompatActivity(), NewsSourcesView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_source_list)
+        setContentView(R.layout.category_activity_source_list)
         initTitle()
         initRecycleView()
         requestSources()

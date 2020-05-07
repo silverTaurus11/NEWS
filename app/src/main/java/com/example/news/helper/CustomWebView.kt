@@ -20,14 +20,6 @@ class CustomWebView : WebView {
     ) : super(context, attrs, defStyleAttr) {
     }
 
-    constructor(
-        context: Context?,
-        attrs: AttributeSet?,
-        defStyleAttr: Int,
-        privateBrowsing: Boolean
-    ) : super(context, attrs, defStyleAttr, privateBrowsing) {
-    }
-
     val maximumScrollValue: Int
         get() = computeVerticalScrollRange() - height
 

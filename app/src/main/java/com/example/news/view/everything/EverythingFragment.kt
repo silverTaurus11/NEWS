@@ -36,7 +36,7 @@ class EverythingFragment: Fragment() {
     private lateinit var categoryListView: ListView
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_all, container, false) as ViewGroup
+        val view = inflater.inflate(R.layout.constraint_fragment_by_category, container, false) as ViewGroup
         categoryListView = view.findViewById(R.id.category_list)
         categoryListView.adapter = categoryAdapter
         categoryListView.setOnItemClickListener { p0, p1, position, p3 ->

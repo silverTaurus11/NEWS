@@ -21,7 +21,6 @@ import com.example.news.helper.CategoryConstanta
 import com.example.news.model.ArticleItem
 import com.example.news.presenter.topheadline.TopHeadlinePresenterFactory
 import com.example.news.view.WebViewActivity
-import org.w3c.dom.Text
 
 class TopHeadlineFragment: Fragment(), ArticleView, View.OnClickListener {
     companion object{
@@ -33,6 +32,16 @@ class TopHeadlineFragment: Fragment(), ArticleView, View.OnClickListener {
     private lateinit var recyclerView: RecyclerView
     private lateinit var searchEditText: EditText
     private lateinit var statusMessageView: TextView
+    private lateinit var categoryPillsContainer: LinearLayout
+    private val categoryPillsList: List<CategoryPills> by lazy { listOf(
+            CategoryPills(R.id.business_type, resources.getString(R.string.bussiness_label)),
+            CategoryPills(R.id.entertaiment_type, resources.getString(R.string.entertaiment_label)),
+            CategoryPills(R.id.general_type, resources.getString(R.string.general_label)),
+            CategoryPills(R.id.health_type, resources.getString(R.string.health_label)),
+            CategoryPills(R.id.science_type, resources.getString(R.string.science_label)),
+            CategoryPills(R.id.sports_type, resources.getString(R.string.sports_label)),
+            CategoryPills(R.id.technology_type, resources.getString(R.string.technology_label))
+    ) }
 
     private val newsRecyclerAdapter by lazy { NewsRecyclerAdapter(object : NewsViewHolderListener{
         override fun onItemClickListener(articleItem: ArticleItem) {
@@ -47,21 +56,29 @@ class TopHeadlineFragment: Fragment(), ArticleView, View.OnClickListener {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.fragment_top_headline, container, false) as ViewGroup
+        val view = inflater.inflate(R.layout.constraint_fragment_top_headline, container, false) as ViewGroup
         recyclerView = view.findViewById(R.id.top_headline_list)
         searchEditText = view.findViewById(R.id.searchEditText)
         statusMessageView = view.findViewById(R.id.status_message_text)
-        (view.findViewById(R.id.business_button) as TextView).setOnClickListener(this)
-        (view.findViewById(R.id.entertainment_button) as TextView).setOnClickListener(this)
-        (view.findViewById(R.id.general_button) as TextView).setOnClickListener(this)
-        (view.findViewById(R.id.health_button) as TextView).setOnClickListener(this)
-        (view.findViewById(R.id.science_button) as TextView).setOnClickListener(this)
-        (view.findViewById(R.id.sports_button) as TextView).setOnClickListener(this)
-        (view.findViewById(R.id.technology_button) as TextView).setOnClickListener(this)
-
+        categoryPillsContainer = view.findViewById(R.id.category_pills_container)
+        initCategoryPills()
         initRecycleView()
         initEditText()
         return view
+    }
+
+    private fun initCategoryPills(){
+        categoryPillsContainer.removeAllViews()
+        for(categoryPills: CategoryPills in categoryPillsList){
+            activity?.let { it ->
+                val view = it.layoutInflater.inflate(R.layout.category_text_pills, categoryPillsContainer, false)
+                val categoryTextView = view.findViewById<TextView>(R.id.category_id)
+                categoryTextView.id = categoryPills.id
+                categoryTextView.text = categoryPills.label
+                categoryTextView.setOnClickListener(this)
+                categoryPillsContainer.addView(view)
+            }
+        }
     }
 
     private fun initRecycleView(){
@@ -150,13 +167,13 @@ class TopHeadlineFragment: Fragment(), ArticleView, View.OnClickListener {
 
     override fun onClick(view: View?) {
         when(view?.id){
-            R.id.business_button -> requestDataByCategori(CategoryConstanta.BUSSINES)
-            R.id.entertainment_button -> requestDataByCategori(CategoryConstanta.ENTERTAIMENT)
-            R.id.general_button -> requestDataByCategori(CategoryConstanta.GENERAL)
-            R.id.health_button -> requestDataByCategori(CategoryConstanta.HEALTH)
-            R.id.science_button -> requestDataByCategori(CategoryConstanta.SCIENCE)
-            R.id.sports_button -> requestDataByCategori(CategoryConstanta.SPORTS)
-            R.id.technology_button -> requestDataByCategori(CategoryConstanta.TECHNOLOGY)
+            R.id.business_type -> requestDataByCategori(CategoryConstanta.BUSSINES)
+            R.id.entertaiment_type -> requestDataByCategori(CategoryConstanta.ENTERTAIMENT)
+            R.id.general_type -> requestDataByCategori(CategoryConstanta.GENERAL)
+            R.id.health_type -> requestDataByCategori(CategoryConstanta.HEALTH)
+            R.id.science_type -> requestDataByCategori(CategoryConstanta.SCIENCE)
+            R.id.sports_type -> requestDataByCategori(CategoryConstanta.SPORTS)
+            R.id.technology_type -> requestDataByCategori(CategoryConstanta.TECHNOLOGY)
             else -> requestData()
         }
     }
@@ -184,4 +201,6 @@ class TopHeadlineFragment: Fragment(), ArticleView, View.OnClickListener {
             showMessageLayout()
         }
     }
+
+    data class CategoryPills(val id: Int, val label: String)
 }
